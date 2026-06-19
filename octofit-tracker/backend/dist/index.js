@@ -18,7 +18,7 @@ app.use('/api/activities', activitiesRouter);
 app.use('/api/leaderboard', leaderboardRouter);
 app.use('/api/workouts', workoutsRouter);
 const apiUrl = CODESPACE_NAME
-    ? `https://${CODESPACE_NAME}-8000.${CODESPACE_NAME}.githubpreview.dev`
+    ? `https://${CODESPACE_NAME}-8000.app.github.dev`
     : `http://localhost:${PORT}`;
 connectDatabase().then(() => {
     app.listen(PORT, () => {
