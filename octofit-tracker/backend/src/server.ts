@@ -7,6 +7,16 @@ import workoutsRouter from './routes/workouts.js';
 
 const app = express();
 
+// Codespaces and localhost URL configuration
+const CODESPACE_NAME = process.env.CODESPACE_NAME;
+const PORT = Number(process.env.PORT ?? 8000);
+
+export const getApiUrl = () => {
+  return CODESPACE_NAME
+    ? `https://${CODESPACE_NAME}-8000.app.github.dev`
+    : `http://localhost:${PORT}`;
+};
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
